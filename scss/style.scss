@@ -1,0 +1,34 @@
+// VARIABLES
+$body-fontfamily: 'lino-type sabon', 'caslon', serif; 
+$heading-fontfamily : 'franklin-gothic-extra-compre', sans-serif;
+$body-maxwidth: 30em;
+
+//COLORS 
+$color-text-body: rgba(0,0,0,.85);
+$color-midgrey: rgba(0,0,0,.5);
+$color-links: #069;
+$color-links-dark: #035;
+
+$color-accent: rgba(75,122,117,1);
+$color-hero-bg: rgba(0, 0, 0, 1);
+
+//BREAKPOINTS 
+$breakpoint-small: 768px;
+$breakpoint-medium: 1050px;
+$breakpoint-large: 1250px;
+
+//MIXINS
+@mixin condensed-text {
+    font-family: $heading-fontfamily;
+    text-transform: uppercase;
+    letter-spacing: .5vw;
+}
+
+// IMPORT PARTIALS
+@import 'partials/toc';
+@import 'partials/typography';
+@import 'partials/buttons';
+@import 'partials/media';
+@import 'partials/layout';
+@import 'partials/grid';
+@import 'partials/structure';
