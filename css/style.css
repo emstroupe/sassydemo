@@ -122,8 +122,9 @@ button,
   padding: 1em 2em;
   display: inline-block;
   margin: .5em;
-  border-radius: .3em;
-  border: 1px solid #069; }
+  border-radius: .1em;
+  border: 1px solid #069;
+  text-decoration: none; }
   button:hover,
   .button:hover {
     background-color: #035;
@@ -138,6 +139,15 @@ button,
       background-color: #035;
       color: #fff;
       border-color: #035; }
+  button.dark,
+  .button.dark {
+    color: #fff;
+    background-color: transparent;
+    border-color: #fff; }
+    button.dark:hover,
+    .button.dark:hover {
+      background-color: #fff;
+      color: #000; }
 
 /* Responsive Images */
 img {
@@ -257,18 +267,33 @@ body {
   justify-content: center; }
 
 /* site navigation */
-.site-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  /*  can use li {display: inline-block;} */ }
+.site-nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: -ms-grid;
+  display: grid;
+  place-items: center; }
+  .site-nav ul {
+    background: rgba(255, 0, 0, 0.5);
+    display: none;
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+  .site-nav a {
+    display: block;
+    padding: 1em; }
+  .site-nav.active {
+    height: 100%; }
+    .site-nav.active ul {
+      display: block; }
 
-.site-nav a {
-  display: block;
-  padding: 1em; }
+/* MENU BUTTON */
+.menu-button {
+  position: absolute;
+  top: 1.75em;
+  right: 2em; }
 
 section {
   padding: 6em 0;
@@ -281,8 +306,44 @@ section {
 .hero {
   background-color: black;
   padding: 6em 1em;
-  text-align: center;
   color: #fff; }
-  .hero p, .hero h2 {
-    margin-left: auto;
-    margin-right: auto; }
+  .hero h2 {
+    font-size: 4em;
+    margin: 0; }
+
+/* Layout section */
+@media (min-width: 768px) {
+  .split-crossed .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  .split-crossed .image-block {
+    width: 50%; }
+  .split-crossed .text-block {
+    width: 50%;
+    -webkit-transform: translateX(-2.5em);
+    -ms-transform: translateX(-2.5em);
+    transform: translateX(-2.5em); } }
+
+@media (min-width: 768px) {
+  .split-crossed-reverse .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse; }
+  .split-crossed-reverse .image-block {
+    width: 50%; }
+  .split-crossed-reverse .text-block {
+    width: 50%;
+    -webkit-transform: translateX(2.5em);
+    -ms-transform: translateX(2.5em);
+    transform: translateX(2.5em); } }
