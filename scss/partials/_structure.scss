@@ -59,12 +59,14 @@
         ul {
             display: block;
         }
+        background: red;
 
     }
 }
 
 /* MENU BUTTON */
 .menu-button {
+    background: #0000; // temp - REMOVE
     position: absolute;
     top: 1.75em;
     right: 2em;

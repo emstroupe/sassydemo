@@ -285,12 +285,14 @@ body {
     display: block;
     padding: 1em; }
   .site-nav.active {
-    height: 100%; }
+    height: 100%;
+    background: red; }
     .site-nav.active ul {
       display: block; }
 
 /* MENU BUTTON */
 .menu-button {
+  background: #0000;
   position: absolute;
   top: 1.75em;
   right: 2em; }
