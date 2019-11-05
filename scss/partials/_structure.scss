@@ -99,6 +99,36 @@
     position: absolute;
     top: 1.75em;
     right: 2em;
+    cursor: pointer;
+    z-index: 200;
+}
+
+.menu-button.navicon {
+    font-size: 1.5em;
+    top: 1em;
+    right: 1em;
+    text-align: center;
+    width: 1em;
+    height: 1em;
+    overflow: hidden;
+    line-height: 1;
+    
+    &:before {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        content: "\2630";
+        // content:""; * can input own content / illustrate icon
+        transform: rotate(0);
+    }
+}
+
+.active .menu-button.navicon:before {
+    content: "\2715";
+    transform: rotate(-90deg);
+    transition: .4s all ease-out;
+
+
 }
 
 section {
@@ -161,4 +191,60 @@ section {
             transform: translateX(2.5em);
         }
     }
+}
+
+/* SCROLL TRIGGERED ANIMATION VIA SCROLLOUT */
+[data-scroll] {
+  transition: opacity 1s;
+}
+[data-scroll="in"] {
+  opacity: 1;
+}
+[data-scroll="out"] {
+  opacity: 0;
+}
+
+/* SPLIT CROSSED ANIMATION */
+[data-scroll].split-crossed .image-block,
+[data-scroll].split-crossed .text-block {
+    transition: 1s ease-out transform;
+}
+
+[data-scroll="in"].split-crossed .image-block {
+    transform: translateX(0);
+}
+
+[data-scroll="in"].split-crossed .text-block {
+    transform: translateX(-2em);
+}
+
+[data-scroll="out"].split-crossed .image-block {
+    transform: translateX(2em);
+}
+
+[data-scroll="out"].split-crossed .text-block {
+    transform: translateX(-4em);
+}
+
+
+/* SPLIT CROSSED REVERSE ANIMATION */
+[data-scroll].split-crossed-reverse .image-block,
+[data-scroll].split-crossed-reverse .text-block {
+    transition: 1s ease-out transform;
+}
+
+[data-scroll="in"].split-crossed-reverse .image-block {
+    transform: translateY(0);
+}
+
+[data-scroll="in"].split-crossed-reverse .text-block {
+    transform: translateY(-2em);
+}
+
+[data-scroll="out"].split-crossed-reverse .image-block {
+    transform: translateY(2em);
+}
+
+[data-scroll="out"].split-crossed-reverse .text-block {
+    transform: translateY(-4em);
 }

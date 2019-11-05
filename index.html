@@ -23,7 +23,7 @@
       <h1><a href="#">Sassy Demo</a></h1>
     </div>
     <nav class="site-nav active">
-      <div class="menu-button">Menu</div>
+      <div class="menu-button navicon">Menu</div>
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#typography">Typography</a></li>
@@ -40,7 +40,7 @@
     </div>
   </section>
 
-  <section id="typography">
+  <section id="typography" data-scroll="out">
 
     <div class="container">
 
@@ -59,7 +59,7 @@
 
   </section>
 
-  <section id="layout" class="split-crossed">
+  <section id="layout" class="split-crossed" data-scroll="out">
     <div class="container">
 
       <div class="image-block">
@@ -76,7 +76,7 @@
 
   </section>
 
-  <section id="layout" class="split-crossed-reverse">
+  <section id="layout" class="split-crossed-reverse" data-scroll="out">
     <div class="container">
 
       <div class="image-block">
@@ -105,12 +105,21 @@
 
   <!-- SMOOTH SCROLL JS -->
   <script src="js/smooth-scroll.polyfills.min.js"></script>
-
   <script>
     var scroll = new SmoothScroll('a[href*="#"]');
   </script>
 
-  <!-- SITE NAV JS -->
+  <!-- SCROLL OUT SCROLL TRIGGERED ANIMATION -->
+  <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
+  <script>
+    ScrollOut(
+      {
+        threshold: 0.4
+      }
+    );
+  </script>
+
+  <!-- MAIN JS -->
   <script src="js/script.js"></script>
 
 </body>
